@@ -1,4 +1,4 @@
-package com.carvalho.cleanarch.dataprovider.mapper;
+package com.carvalho.cleanarch.dataprovider.client.mapper;
 
 import com.carvalho.cleanarch.core.domain.Address;
 import com.carvalho.cleanarch.dataprovider.client.response.AddressResponse;

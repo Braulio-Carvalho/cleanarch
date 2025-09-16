@@ -11,13 +11,18 @@ public class InsertCustomerUseCaseImpl implements InsertCustomerUseCase {
 
     private final InsertCustomer insertCustomer;
 
-    public InsertCustomerUseCaseImpl(FindAddressByZipCode findAddressByZipCode, InsertCustomer insertCustomer) {
+    public InsertCustomerUseCaseImpl(
+            FindAddressByZipCode findAddressByZipCode,
+            InsertCustomer insertCustomer
+    ) {
         this.findAddressByZipCode = findAddressByZipCode;
         this.insertCustomer = insertCustomer;
     }
 
     @Override
     public void insert(Customer customer, String zipCode) {
-
+        var address = findAddressByZipCode.find(zipCode);
+        customer.setAddress(address);
+        insertCustomer.insert(customer);
     }
 }

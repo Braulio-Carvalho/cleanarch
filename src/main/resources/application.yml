@@ -1,8 +1,12 @@
 spring:
   application:
     name: cleanarch
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/cleanarch
 
 carvalho:
   client:
     address:
       url: http://localhost:8082/address
+
