@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: cleanarch
+
+carvalho:
+  client:
+    address:
+      url: http://localhost:8082/address
