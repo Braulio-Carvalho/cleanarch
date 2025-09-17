@@ -2,8 +2,10 @@ package com.carvalho.cleanarch.core.usecase;
 
 import com.carvalho.cleanarch.core.domain.Customer;
 
-public interface InsertCustomerUseCase {
+import java.util.UUID;
 
-    void insert(Customer customer, String zipCode);
+public interface FindCustomerByIdUseCase {
+
+    Customer find(final UUID id);
 
 }

@@ -2,8 +2,8 @@ package com.carvalho.cleanarch.core.usecase;
 
 import com.carvalho.cleanarch.core.domain.Customer;
 
-public interface InsertCustomerUseCase {
+public interface UpdateCustomerByIdUseCase {
 
-    void insert(Customer customer, String zipCode);
+    void update(Customer customer, String zipCode);
 
 }

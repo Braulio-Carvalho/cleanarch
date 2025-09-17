@@ -1,0 +1,27 @@
+package com.carvalho.cleanarch.core.usecase.impl;
+
+import com.carvalho.cleanarch.core.dataprovider.DeleteCustomerById;
+import com.carvalho.cleanarch.core.usecase.DeleteCustomerByIdUseCase;
+import com.carvalho.cleanarch.core.usecase.FindCustomerByIdUseCase;
+
+import java.util.UUID;
+
+public class DeleteCustomerByIdUseCaseImpl implements DeleteCustomerByIdUseCase {
+
+    private final FindCustomerByIdUseCase findCustomerByIdUseCase;
+
+    private final DeleteCustomerById deleteCustomerById;
+
+    public DeleteCustomerByIdUseCaseImpl(
+            FindCustomerByIdUseCase findCustomerByIdUseCase,
+            DeleteCustomerById deleteCustomerById) {
+        this.findCustomerByIdUseCase = findCustomerByIdUseCase;
+        this.deleteCustomerById = deleteCustomerById;
+    }
+
+    @Override
+    public void delete(UUID id) {
+        findCustomerByIdUseCase.find(id);
+        deleteCustomerById.delete(id);
+    }
+}

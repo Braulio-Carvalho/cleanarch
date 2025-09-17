@@ -1,22 +1,24 @@
 package com.carvalho.cleanarch.dataprovider;
 
-import com.carvalho.cleanarch.core.dataprovider.InsertCustomer;
+import com.carvalho.cleanarch.core.dataprovider.UpdateCustomer;
 import com.carvalho.cleanarch.core.domain.Customer;
 import com.carvalho.cleanarch.dataprovider.repository.CustomerRepository;
 import com.carvalho.cleanarch.dataprovider.repository.mapper.CustomerEntityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-public class InsertCustomerImpl implements InsertCustomer {
+@Component
+public class UpdateCustomerImpl implements UpdateCustomer {
 
     @Autowired
-    private CustomerRepository customerRepository;
+    CustomerRepository customerRepository;
 
     @Autowired
-    private CustomerEntityMapper customerEntityMapper;
+    CustomerEntityMapper customerEntityMapper;
 
     @Override
-    public void insert(Customer customer) {
+    public void update(Customer customer) {
         var customerEntity = customerEntityMapper.toCustomerEntity(customer);
-        customerRepository.insert(customerEntity);
+        customerRepository.save(customerEntity);
     }
 }

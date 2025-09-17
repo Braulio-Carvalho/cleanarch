@@ -1,12 +1,17 @@
 package com.carvalho.cleanarch.dataprovider;
 
-import com.carvalho.cleanarch.core.dataprovider.InsertCustomer;
+import com.carvalho.cleanarch.core.dataprovider.FindCustomerById;
 import com.carvalho.cleanarch.core.domain.Customer;
 import com.carvalho.cleanarch.dataprovider.repository.CustomerRepository;
 import com.carvalho.cleanarch.dataprovider.repository.mapper.CustomerEntityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-public class InsertCustomerImpl implements InsertCustomer {
+import java.util.Optional;
+import java.util.UUID;
+
+@Component
+public class FindCustomerByIdImpl implements FindCustomerById {
 
     @Autowired
     private CustomerRepository customerRepository;
@@ -15,8 +20,8 @@ public class InsertCustomerImpl implements InsertCustomer {
     private CustomerEntityMapper customerEntityMapper;
 
     @Override
-    public void insert(Customer customer) {
-        var customerEntity = customerEntityMapper.toCustomerEntity(customer);
-        customerRepository.insert(customerEntity);
+    public Optional<Customer> find(UUID id) {
+        var customerEntity = customerRepository.findById(String.valueOf(id));
+        return customerEntity.map(entity -> customerEntityMapper.toCustomer(entity));
     }
 }
