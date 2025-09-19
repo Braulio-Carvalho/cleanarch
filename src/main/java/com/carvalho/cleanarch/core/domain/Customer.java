@@ -1,22 +1,20 @@
 package com.carvalho.cleanarch.core.domain;
 
-import java.util.UUID;
-
 public class Customer {
 
-    public Customer(UUID id, String name, String cpf, Address address, Boolean isValidCpf) {
+    public Customer(String id, String name, String cpf, Address address, Boolean validCpf) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
         this.address = address;
-        this.isValidCpf = isValidCpf;
+        this.validCpf = validCpf;
     }
 
     public Customer() {
-        this.isValidCpf = false;
+        this.validCpf = false;
     }
 
-    private UUID id;
+    private String id;
 
     private String name;
 
@@ -24,13 +22,13 @@ public class Customer {
 
     private Address address;
 
-    private Boolean isValidCpf;
+    private Boolean validCpf;
 
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -50,19 +48,19 @@ public class Customer {
         this.cpf = cpf;
     }
 
+    public Boolean getValidCpf() {
+        return validCpf;
+    }
+
+    public void setValidCpf(Boolean validCpf) {
+        this.validCpf = validCpf;
+    }
+
     public Address getAddress() {
         return address;
     }
 
     public void setAddress(Address address) {
         this.address = address;
-    }
-
-    public Boolean getValidCpf() {
-        return isValidCpf;
-    }
-
-    public void setValidCpf(Boolean validCpf) {
-        isValidCpf = validCpf;
     }
 }

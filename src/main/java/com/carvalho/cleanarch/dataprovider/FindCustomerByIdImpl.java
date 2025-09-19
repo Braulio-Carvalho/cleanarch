@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
-import java.util.UUID;
 
 @Component
 public class FindCustomerByIdImpl implements FindCustomerById {
@@ -20,8 +19,8 @@ public class FindCustomerByIdImpl implements FindCustomerById {
     private CustomerEntityMapper customerEntityMapper;
 
     @Override
-    public Optional<Customer> find(UUID id) {
-        var customerEntity = customerRepository.findById(String.valueOf(id));
+    public Optional<Customer> find(String id) {
+        var customerEntity = customerRepository.findById(id);
         return customerEntity.map(entity -> customerEntityMapper.toCustomer(entity));
     }
 }

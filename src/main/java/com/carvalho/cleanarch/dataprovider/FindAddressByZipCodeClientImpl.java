@@ -18,6 +18,7 @@ public class FindAddressByZipCodeClientImpl implements FindAddressByZipCode {
 
     @Override
     public Address find(String zipCode) {
+        System.out.println("ZIP recebido no client: [" + zipCode + "]");
         var addressResponse = findAddressByZipCodeClient.find(zipCode);
         return addressResponseMapper.toAddress(addressResponse);
     }

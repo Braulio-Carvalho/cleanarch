@@ -4,7 +4,6 @@ import com.carvalho.cleanarch.core.dataprovider.DeleteCustomerById;
 import com.carvalho.cleanarch.core.usecase.DeleteCustomerByIdUseCase;
 import com.carvalho.cleanarch.core.usecase.FindCustomerByIdUseCase;
 
-import java.util.UUID;
 
 public class DeleteCustomerByIdUseCaseImpl implements DeleteCustomerByIdUseCase {
 
@@ -20,7 +19,7 @@ public class DeleteCustomerByIdUseCaseImpl implements DeleteCustomerByIdUseCase 
     }
 
     @Override
-    public void delete(UUID id) {
+    public void delete(String id) {
         findCustomerByIdUseCase.find(id);
         deleteCustomerById.delete(id);
     }

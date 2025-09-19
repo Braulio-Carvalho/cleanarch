@@ -4,9 +4,9 @@ import com.carvalho.cleanarch.core.dataprovider.FindAddressByZipCode;
 import com.carvalho.cleanarch.core.dataprovider.FindCustomerById;
 import com.carvalho.cleanarch.core.dataprovider.UpdateCustomer;
 import com.carvalho.cleanarch.core.domain.Customer;
-import com.carvalho.cleanarch.core.usecase.UpdateCustomerByIdUseCase;
+import com.carvalho.cleanarch.core.usecase.UpdateCustomerUseCase;
 
-public class UpdateCustomerByIdUseCaseImpl implements UpdateCustomerByIdUseCase {
+public class UpdateCustomerUseCaseImpl implements UpdateCustomerUseCase {
 
     private final FindCustomerById findCustomerById;
 
@@ -14,7 +14,7 @@ public class UpdateCustomerByIdUseCaseImpl implements UpdateCustomerByIdUseCase 
 
     private final UpdateCustomer updateCustomer;
 
-    public UpdateCustomerByIdUseCaseImpl(
+    public UpdateCustomerUseCaseImpl(
             FindCustomerById findCustomerById,
             FindAddressByZipCode findAddressByZipCode,
             UpdateCustomer updateCustomer

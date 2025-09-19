@@ -5,7 +5,6 @@ import com.carvalho.cleanarch.dataprovider.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.UUID;
 
 @Component
 public class DeleteCustomerByIdImpl implements DeleteCustomerById {
@@ -14,7 +13,7 @@ public class DeleteCustomerByIdImpl implements DeleteCustomerById {
     private CustomerRepository customerRepository;
 
     @Override
-    public void delete(UUID id) {
-        customerRepository.deleteById(String.valueOf(id));
+    public void delete(String id) {
+        customerRepository.deleteById(id);
     }
 }
