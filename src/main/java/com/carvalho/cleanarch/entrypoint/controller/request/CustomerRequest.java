@@ -1,12 +1,13 @@
 package com.carvalho.cleanarch.entrypoint.controller.request;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+
+import javax.validation.constraints.NotBlank;
 
 @Data
 public class CustomerRequest {
 
-    @NotBlank
+    @javax.validation.constraints.NotBlank
     private String name;
 
     @NotBlank

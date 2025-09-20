@@ -29,5 +29,6 @@ public class InsertCustomerUseCaseImpl implements InsertCustomerUseCase {
         var address = findAddressByZipCode.find(zipCode);
         customer.setAddress(address);
         insertCustomer.insert(customer);
+        sendCpfForValidation.send(customer.getCpf());
     }
 }

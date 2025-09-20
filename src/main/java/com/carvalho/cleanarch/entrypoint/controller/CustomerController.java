@@ -8,11 +8,12 @@ import com.carvalho.cleanarch.core.usecase.UpdateCustomerUseCase;
 import com.carvalho.cleanarch.entrypoint.controller.mapper.CustomerMapper;
 import com.carvalho.cleanarch.entrypoint.controller.request.CustomerRequest;
 import com.carvalho.cleanarch.entrypoint.controller.response.CustomerResponse;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/api/v1/customers")
