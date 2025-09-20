@@ -1,11 +1,13 @@
 package com.carvalho.cleanarch.dataprovider.repository.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document(collection = "customers")
+@AllArgsConstructor
+@NoArgsConstructor
 public class CustomerEntity {
 
     @Id
@@ -13,6 +15,6 @@ public class CustomerEntity {
     private String name;
     private AddressEntity address;
     private String cpf;
-    private boolean validCpf;
+    private Boolean validCpf;
 
 }
